@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="000acf77-3696-4725-8770-2cfef1caa2e8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/R Shiny.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/rGraphicsSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/rSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IFoA Certificate in Data Science_assignment3.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cbsa-met-est2019-annres.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/myreport.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui.R" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/www/rstudio.png" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="R Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1k45CtmrdMe9qmtfqIbF34aQh5j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="000acf77-3696-4725-8770-2cfef1caa2e8" name="Default Changelist" comment="" />
+      <created>1604946898514</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1604946898514</updated>
+    </task>
+    <servers />
+  </component>
+</project>
