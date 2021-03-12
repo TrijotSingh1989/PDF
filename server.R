@@ -25,7 +25,7 @@ Claim_Value <- 0
 for(i in 1:12) {
   # i-th element of `u1` squared into `i`-th position of `usq`
 
-  test19<- data1[i+97] %>%
+  test19<- data1[i+94] %>%
   str_squish() %>%
   str_replace_all(",","") %>%
   strsplit(split=" ")
