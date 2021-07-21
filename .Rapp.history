@@ -1,0 +1,110 @@
+library(pdftools)#
+library(dplyr)#
+library(tidyverse)#
+library(stringi)#
+library(tidyr)
+data1 <- pdf_text('/Users/TJIpadAccess/AXAClaimReport1.pdf')
+data1
+data1[74]
+str_squish(data1)#
+str_replace_all(data1,",","")#
+strsplit(data1,split=" ")#
+unlist(data1)#
+seperate(data1)#
+x <- paste(data1, collapse = "")#
+unlist(strsplit(x, split = ""))#
+y = unlist(strsplit(x, split = " "))#
+gsub(" ", "", y, fixed = TRUE)#
+stri_remove_empty(y, na_empty = FALSE)#
+k = stri_remove_empty(y, na_empty = FALSE)#
+str_locate(k, '17a')#
+t = unlist(gregexpr("17a", k))#
+which(t == "True")#
+datanumber = which(t > 0)
+datanumber
+t[762]
+k[datanumber]
+k[datanumber+1]
+k[datanumber+2]
+k[datanumber+3]
+k[datanumber+4]
+k[datanumber+5]
+seperate(data1)
+k[datanumber+8]
+k[datanumber+12]
+typeof(k[datanumber+12])
+str_split(k[datanumber+12], "\")
+str_split(k[datanumber+12],"\")
+str_split(k[datanumber+12], " and ", n = 3)
+str_split(k[datanumber+12], "\", n = 3)
+strsplit(x, split)
+strsplit(x, split)
+str_split(k[datanumber+12], "\\\\")
+str_split(k[datanumber+12], "\1")
+str_split(k[datanumber+12], "\n")
+str_split(k[datanumber+12], "\n")[[1]]
+str_split(k[datanumber+12], "\n")[[0]]
+str_split(k[datanumber+12], "\n")[[1]]
+str_split(k[datanumber+12], "\n")[1]
+kad = str_split(k[datanumber+12], "\n")
+kad
+kad[1]
+kad[1][1]
+kad[1][1][1]
+kad = str_split(k[datanumber+12], "\\")
+kad
+kad = str_split(k[datanumber+12], "\\\")
+kad = str_split(k[datanumber+12], "\\\\")
+kad
+kad = str_split(k[datanumber+12], "\n")
+kad
+typeof(kad)
+kad(1)
+kad(0)
+kad[1]
+decribe(kad)
+describe(kad)
+kad[[1]]
+kad[[1]]*1
+len(kad)
+length(kad)
+l <- strsplit(k[datanumber+12], "n")
+l
+l <- strsplit(k[datanumber+12], "\n")
+l
+length(k[datanumber+12])
+x <- "\u00b5"
+x
+m <- "3,099,314\n17d"
+m
+unlist(kad)
+asd = unlist(kad)
+asd
+asd[1]
+as.numeric(asd[1])
+type.of(asd[1])
+typeof(asd[1])
+class(asd[1])
+class(asd[1]*1)
+asd[1]*1
+awe = asd[1]
+awe
+as.numeric(awe)
+gsub(",","",awe)
+gsub(",","",asd[1])
+as.numeric(gsub(",","",asd[1]))
+str_split(k[datanumber+12], "\n")[[1]]
+unlist(str_split(k[datanumber+12], "\n")[[1]])
+unlist(str_split(k[datanumber+12], "\n"))
+unlist(str_split(k[datanumber+12], "\n")[1])
+cl = str_split(cl,'\n')
+cl = str_split(k[datanumber+12],'\n')
+cl
+unlist(cl)
+unlist(cl)[1]
+as.numeric(unlist(cl)[1])
+as.numeric(unlist(cl)[1])
+tj = as.numeric(unlist(cl)[1])
+tj = (unlist(cl)[1])
+tj
+as.numeric(gsub(",","",tj))
