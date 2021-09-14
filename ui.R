@@ -53,8 +53,8 @@ ui <- fluidPage(
       # Output: Data file ----
      tabsetPanel(type = "tabs",
                  tabPanel("Summary", tableOutput("contents")),
-                 tabPanel("PremiumInfo", tableOutput("contents1")))#,
-    #             tabPanel("WIP", tableOutput("contents")))
+                 tabPanel("PremiumInfo", tableOutput("contents1")),
+                 tabPanel("WIP", plotOutput("contents2")))
      # tableOutput("contents"))
 
     )

@@ -1,0 +1,14 @@
+name: DHA_ClaimsPDF
+title: DHA_ClaimsPDF
+username:
+account: trijot
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4648790
+bundleId: 5031635
+url: https://trijot.shinyapps.io/DHA_ClaimsPDF/
+when: 1631618588.72708
+lastSyncTime: 1631618588.72709
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: .Rapp.history|.RData|cbsa-met-est2019-annres.xlsx|Extra|IFoA Certificate in Data Science_assignment3.pdf|myreport.pdf|Readme.docx|test.R|www/rstudio.png
