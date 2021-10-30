@@ -1,7 +1,7 @@
 ui <- fluidPage(
 
   # App title ----
-  titlePanel("Reading PDF files and Creating Database for same"),
+  titlePanel("Experience Based Pricing Tool"),
 
   # Sidebar layout with input and output definitions ----
   sidebarLayout(
@@ -52,12 +52,24 @@ ui <- fluidPage(
 
       # Output: Data file ----
      tabsetPanel(type = "tabs",
-                 tabPanel("Summary", tableOutput("contents")),
-                 tabPanel("PremiumInfo", tableOutput("contents1")))#,
+                 tabPanel("ClaimsInfo", tableOutput("contents")),
+                 tabPanel("CompletingClaimsinfo", mainPanel("WIP")),
+                 tabPanel("PremiumInfo", fluidPage(mainPanel(h2(textOutput("text_calc2")))),
+                                                   numericInput("num", h3("Admin Charge (%)"), 
+                                                             value = 10),
+                                                   numericInput("num1", h3("Commission (%)"), 
+                                                             value = 10),
+                                                   numericInput("num2", h3("TLR (%)"), 
+                                                                value = 95),
+                                                  mainPanel(h2(textOutput("text_calc")),
+                                                    h4(textOutput("text_calc3")))
+                          )
+                 ))
+     #,
     #             tabPanel("WIP", tableOutput("contents")))
      # tableOutput("contents"))
 
     )
 
   )
-)
+
