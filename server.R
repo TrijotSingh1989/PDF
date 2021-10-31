@@ -6,8 +6,13 @@ library(tidyr)
 library(rhandsontable)
 # Define server logic to read selected file ----
 server <- function(input, output) {
+<<<<<<< HEAD
   values <- reactiveValues()
   output$contents <- renderTable({
+=======
+
+output$contents <- renderTable({
+>>>>>>> 979cc3bfb6a212cbf37bcb545071d4870b23ed35
 
     # input$file1 will be NULL initially. After the user selects
     # and uploads a file, head of that data file by default,
@@ -151,30 +156,15 @@ client.data <- data.frame(ClientName_used3, year, month,Claim_Value)
     df1 <- data.frame(ClientName_used3,month,year,Claim_Value)
     #return(df1)
     Total_Claims = sum(df1$Claim_Value)
-    #Total_premium = Total_Claims * 1.10
-    #Total_Claims = formatC(Total_Claims, format="f", big.mark=",", digits=1)
-    #Total_premium = formatC(Total_premium, format="f", big.mark=",", digits=1)
-    #df2 <- data.frame(Total_Claims,Total_premium)
-    #return(df2)
-
+    Total_premium = Total_Claims * 1.10
+    Total_Claims = formatC(Total_Claims, format="f", big.mark=",", digits=1)
+    Total_premium = formatC(Total_premium, format="f", big.mark=",", digits=1)
+    df2 <- data.frame(Total_Claims,Total_premium)
+    return(df2)
   })  
-  
-  
-  vals <- reactiveValues()
-  observe({
-    vals$A <- input$num
-    vals$B <- input$num1
-    vals$C <- input$num2
-    vals$D <- input$num3
-    vals$E <- input$num4
-    vals$F <- input$num5
-  })
-##  output$text_calc <- renderText({
-##    paste("Premium Calculation is Claims*AdminCharge * TLR =" Total_Claims * vals$A * vals$B)
-##     })
 
-  output$text_calc <- renderText({
-    
+output$contents2 <- renderPlot({
+    #input$newplot
     # input$file1 will be NULL initially. After the user selects
     # and uploads a file, head of that data file by default,
     # or all rows if selected, will be shown.
@@ -241,109 +231,17 @@ client.data <- data.frame(ClientName_used3, year, month,Claim_Value)
     client.data <- data.frame(ClientName_used3, year, month,Claim_Value)
     #df1 <- c(data1[2],data1[2])
     #df1 <- c(data1[13384],data1[13564],data1[13546])
-    Claim_Value1 = formatC(Claim_Value, format="f", big.mark=",", digits=1)
-    df1 <- data.frame(ClientName_used3,month,year,Claim_Value)
+    month_year = paste(month,year)
+    df3 <- data.frame(month,year,Claim_Value)
     #return(df1)
-    Total_Claims = sum(df1$Claim_Value)
-    
-    
-    Total_claims1 = formatC(Total_Claims * (1+(vals$A/100)) * (1+(vals$B/100)) / (vals$C/100), format="f", big.mark=",", digits=1)
-    paste("Premium = ", (Total_claims1))
-    #paste("* Claims * Admin Charge / TLR")
+    #Total_Claims = sum(df1$Claim_Value)
     #Total_premium = Total_Claims * 1.10
     #Total_Claims = formatC(Total_Claims, format="f", big.mark=",", digits=1)
     #Total_premium = formatC(Total_premium, format="f", big.mark=",", digits=1)
     #df2 <- data.frame(Total_Claims,Total_premium)
-    #return(df2)
-    
-  })  
-  
-  output$text_calc3 <- renderText({
-    paste("**Premium = Claims * Admin Charge * Commission / TLR") })
-  
-  output$text_calc2 <- renderText({
-    
-    # input$file1 will be NULL initially. After the user selects
-    # and uploads a file, head of that data file by default,
-    # or all rows if selected, will be shown.
-    
-    req(input$file1)
-    
-    data1 <- pdf_text(input$file1$datapath)%>%
-      readr::read_lines()
-    #  str_squish() %>%
-    #  str_replace_all(",","") %>%
-    #  strsplit(split=" ") %>%
-    #unlist()
-    month <- 0
-    year <- 0
-    Claim_Value <- 0
-    day <- 0
-    #data1 = str_squish(data1)
-    #data1 = str_replace_all(data1,",","")
-    #data1 = strsplit(data1,split=" ")
-    #data1 = unlist(data1)
-    #seperate(data1)
-    #x <- paste(data1, collapse = "")
-    y = unlist(strsplit(data1, split = " "))
-    k = stri_remove_empty(y, na_empty = FALSE)
-    str_locate(k, '17a')
-    t = unlist(gregexpr("17a", k))
-    which(t == "True")
-    datanumber = which(t > 0)
-    datanumber = datanumber-1
-    
-    for(i in 1:12) {
-      # i-th element of `u1` squared into `i`-th position of `usq`
-      month[i] <- k[datanumber+(5*i-3)]
-      day[i] <- k[datanumber+(5*i-2)]
-      year[i] <- k[datanumber+(5*i-1)]
-      cl <- k[datanumber+5*i]
-      cl1 <- str_split(cl, "\n")
-      cl2 <- unlist(cl1)
-      cl3 <- cl2[1]
-      Claim_Value[i] <- as.numeric(gsub(",","",cl3))
-    }
-    
-    t1 = unlist(gregexpr("Policy", k))
-    which(t1 == "True")
-    datanumber1 = which(t1 > 0)
-    datanumber1 = datanumber1-2
-    k[datanumber1][1]
-    
-    t2 = unlist(gregexpr("Name", k))
-    which(t2 == "True")
-    datanumber2 = which(t2 > 0)
-    datanumber2 = datanumber2+3
-    k[datanumber2][1]
-    ClientName <- ''
-    seq(datanumber2[1], datanumber1[1])
-    numberchar_clientName = datanumber1[1]-datanumber2[1]
-    for(i in datanumber2[1]:datanumber1[1]) {
-      ClientName1 <- (k[i])
-      ClientName <- c(ClientName,paste(ClientName1, collapse = "," ))
-    }
-    ClientName_used1 = str_c(ClientName,collapse=',') 
-    ClientName_used2 = str_c(ClientName_used1,collapse=',')
-    ClientName_used3 = str_replace_all(ClientName_used2,",","")
-    client.data <- data.frame(ClientName_used3, year, month,Claim_Value)
-    #df1 <- c(data1[2],data1[2])
-    #df1 <- c(data1[13384],data1[13564],data1[13546])
-    Claim_Value1 = formatC(Claim_Value, format="f", big.mark=",", digits=1)
-    df1 <- data.frame(ClientName_used3,month,year,Claim_Value)
-    #return(df1)
-    Total_Claims = sum(df1$Claim_Value)
-    
-    
-    Total_claims1 = formatC(Total_Claims * (1+(vals$A/100)) * (1+(vals$B/100)) / (vals$C/100), format="f", big.mark=",", digits=1)
-    #paste("Premium = ", (Total_claims1))
-    paste("Claims =",Total_Claims)
-    #Total_premium = Total_Claims * 1.10
-    #Total_Claims = formatC(Total_Claims, format="f", big.mark=",", digits=1)
-    #Total_premium = formatC(Total_premium, format="f", big.mark=",", digits=1)
-    #df2 <- data.frame(Total_Claims,Total_premium)
-    #return(Total_Claims)
-    
+    #plot(df3,xlim="asd",ylim="asd")
+    ggplot(df3, 
+           aes(month, Claim_Value)) + geom_point() + geom_line()
   })  
   
 
