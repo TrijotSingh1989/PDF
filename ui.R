@@ -53,7 +53,8 @@ ui <- fluidPage(
       # Output: Data file ----
      tabsetPanel(type = "tabs",
                  tabPanel("ClaimsInfo", tableOutput("contents")),
-                 tabPanel("CompletingClaimsinfo", mainPanel("WIP")),
+                 #tabPanel("CompletingClaimsinfo", mainPanel(rHandsontableOutput('contents3'))),
+                 tabPanel("CompletingClaimsinfo", mainPanel('WIP')),
                  tabPanel("PremiumInfo", fluidPage(mainPanel(h2(textOutput("text_calc2")))),
                                                    numericInput("num", h3("Admin Charge (%)"), 
                                                              value = 10),
